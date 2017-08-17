@@ -1,0 +1,61 @@
+<div class="row justify-content-center align-items-center" ng-controller="ChatController as vm">
+	<div class="col-6">
+		<div class="chat-card card">
+			<!-- Heading -->
+			<div class="card-header">
+				<i class="fa fa-comments fa-fw"></i> Chatbot
+				<!-- <div class="card-title">
+					Chatbot
+				</div> -->
+			</div>
+			<!-- Body -->
+			<div class="card-body">
+				<ul class="chat" ng-repeat="message in vm.messages">
+					<li class="left clearfix" ng-if="message.recipient === 'user'">
+						<span class="chat-img pull-left">
+									<img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="rounded-circle" />
+								</span>
+						<div class="chat-body clearfix">
+							<div class="header">
+								<strong class="primary-font">You</strong>
+								<small class="pull-right text-muted">
+											<i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+								</small>
+							</div>
+							<p>
+								{{message.content}}
+							</p>
+						</div>
+					</li>
+					<li class="right clearfix" ng-if="message.recipient === 'watson'">
+						<span class="chat-img pull-right">
+								<img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="rounded-circle" />
+							</span>
+						<div class="chat-body clearfix">
+							<div class="header">
+								<small class=" text-muted">
+										<i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
+								<strong class="pull-right primary-font">Watson</strong>
+							</div>
+							<p>
+								{{message.content}}
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- Footer -->
+			<div class="card-footer">
+				<div class="input-group">
+					<input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." ng-model="vm.input"
+					/>
+					<span class="input-group-btn">
+						<button class="btn btn-secondary bg-success" id="btn-chat" ng-click="vm.sendMessage()">
+							Send
+						</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

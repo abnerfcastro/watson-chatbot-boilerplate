@@ -1,0 +1,22 @@
+{
+  "name": "watson-chatbot-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for a chatbot using IBM Watson.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chatbot",
+    "watson"
+  ],
+  "author": "Abner Castro",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cfenv": "^1.0.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "watson-developer-cloud": "^2.38.0"
+  }
+}

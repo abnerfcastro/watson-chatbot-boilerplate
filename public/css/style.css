@@ -1,0 +1,68 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	height: 100%;
+	margin-bottom: 45px;
+}
+
+#page-wrapper {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.effect {
+	-webkit-box-shadow: 0 0 3px rgb(100, 100, 100);
+	-moz-box-shadow: 0 0 3px rgb(100, 100, 100);
+}
+
+.center {
+	margin: 0 auto;
+	width: 50%;
+}
+
+.chat {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.chat li {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px dotted #999999;
+}
+
+.chat li.left .chat-body {
+	margin-left: 60px;
+}
+
+.chat li.right .chat-body {
+	margin-right: 60px;
+}
+
+.chat li .chat-body p {
+	margin: 0;
+}
+
+.chat-card .card-body {
+	min-height: 300px;
+	max-height: 600px;
+	overflow-y: scroll;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	background-color: #f2f2f2;
+}
+
+.footer-text {
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+}
