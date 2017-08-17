@@ -7,19 +7,19 @@
  */
 
 (function () {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('chatbot.app.resources', ['ngResource'])
-		.factory('WatsonApi', WatsonApi);
+    angular
+        .module('chatbot.app.resources', ['ngResource'])
+        .factory('WatsonApi', WatsonApi);
 
-	WatsonApi.$inject = ['$resource'];
+    WatsonApi.$inject = ['$resource'];
 
-	function WatsonApi($resource) {
-		return $resource('/api/message', {}, {
-			send: {
-				method: 'POST'
-			}
-		});
-	}
+    function WatsonApi($resource) {
+        return $resource('/api/message', {}, {
+            send: {
+                method: 'POST'
+            }
+        });
+    }
 })();

@@ -7,34 +7,34 @@
  */
 
 (function () {
-	'use strict';
+    'use strict';
 
-	angular.module('chatbot.app', [
-		'ngRoute',
-		'chatbot.app.services'
-	]);
+    angular.module('chatbot.app', [
+        'ngRoute',
+        'chatbot.app.services'
+    ]);
 
-	angular
-		.module('chatbot.app')
-		.config(['$compileProvider', '$routeProvider', '$locationProvider',
-			function ($compileProvider, $routeProvider, $locationProvider) {
-				// Uncomment for Production
-				// $compileProvider.debugInfoEnabled(false);
+    angular
+        .module('chatbot.app')
+        .config(['$compileProvider', '$routeProvider', '$locationProvider',
+            function ($compileProvider, $routeProvider, $locationProvider) {
+                // Uncomment for Production
+                // $compileProvider.debugInfoEnabled(false);
 
-				$routeProvider
-					.when('/', {
-						templateUrl: '/views/home.view.html'
-					})
-					.when('/about', {
-						templateUrl: '/views/about.view.html'
-					})
-					.otherwise({
-						redirectTo: '/'
-					});
+                $routeProvider
+                    .when('/', {
+                        templateUrl: '/views/home.view.html'
+                    })
+                    .when('/about', {
+                        templateUrl: '/views/about.view.html'
+                    })
+                    .otherwise({
+                        redirectTo: '/'
+                    });
 
-				$locationProvider.html5Mode(true);
+                $locationProvider.html5Mode(true);
 
-			}
-		]);
+            }
+        ]);
 
 })();

@@ -7,23 +7,23 @@
  */
 
 (function () {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('chatbot.app')
-		.controller('MainController', MainController);
+    angular
+        .module('chatbot.app')
+        .controller('MainController', MainController);
 
-	MainController.$inject = ['$log'];
+    MainController.$inject = ['$log'];
 
-	function MainController($log) {
-		var vm = this;
+    function MainController($log) {
+        var vm = this;
 
 
-		activate();
+        activate();
 
-		////////////////
+        ////////////////
 
-		function activate() { }
-	}
+        function activate() { }
+    }
 
 })();

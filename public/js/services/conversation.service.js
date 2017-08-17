@@ -7,25 +7,25 @@
  */
 
 (function () {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('chatbot.app.services', ['ngResource', 'chatbot.app.resources'])
-		.factory('Conversation', Conversation);
+    angular
+        .module('chatbot.app.services', ['ngResource', 'chatbot.app.resources'])
+        .factory('Conversation', Conversation);
 
-	Conversation.$inject = ['$log', 'WatsonApi'];
+    Conversation.$inject = ['$log', 'WatsonApi'];
 
-	function Conversation($log, $watson) {
-		var service = {
-			sendMessage: sendMessage
-		};
+    function Conversation($log, $watson) {
+        var service = {
+            sendMessage: sendMessage
+        };
 
-		return service;
+        return service;
 
-		function sendMessage(contents) {
-			return $watson.send({
-				message: contents
-			}).$promise;
-		}
-	}
+        function sendMessage(contents) {
+            return $watson.send({
+                message: contents
+            }).$promise;
+        }
+    }
 })();

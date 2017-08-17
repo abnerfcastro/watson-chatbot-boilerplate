@@ -7,17 +7,17 @@
  */
 
 (function() {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('chatbot.app')
-		.controller('NavbarController', NavbarController);
+    angular
+        .module('chatbot.app')
+        .controller('NavbarController', NavbarController);
 
-	NavbarController.$inject = ['$scope', '$location'];
-	function NavbarController($scope, $location) {				
-		$scope.isActive = function (location) {
-			return location === $location.path();
-		}
-	}
-	
+    NavbarController.$inject = ['$scope', '$location'];
+    function NavbarController($scope, $location) {				
+        $scope.isActive = function (location) {
+            return location === $location.path();
+        }
+    }
+    
 })();

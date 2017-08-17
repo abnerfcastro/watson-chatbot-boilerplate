@@ -10,6 +10,7 @@
     "chatbot",
     "watson"
   ],
+  "repository": "https://github.com/abnerfcastro/watson-chatbot-boilerplate.git",
   "author": "Abner Castro",
   "license": "ISC",
   "dependencies": {

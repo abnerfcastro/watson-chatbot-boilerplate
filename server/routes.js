@@ -7,8 +7,8 @@
  */
 
 var CheckWorkspaceMiddleware = (req, res, next) => {
-	var workspace = process.env.WORKSPACE_ID;
-	if (!workspace || workspace === '<workspace-id>') {
+    var workspace = process.env.WORKSPACE_ID;
+    if (!workspace || workspace === '<workspace-id>') {
         console.error('WORKSPACE ID not set');
         return res.json({
             'output': {
@@ -16,30 +16,32 @@ var CheckWorkspaceMiddleware = (req, res, next) => {
             }
         });
     } else {
-		// Attach WorkspaceID to request object
-		req.workspaceId = workspace;
-		next();
-	}
+        // Attach WorkspaceID to request object
+        req.workspaceId = workspace;
+        next();
+    }
 }
 
 module.exports = (app, conversation) => {
 
-	app.post('/api/message', CheckWorkspaceMiddleware, (req, res) => {
-		var $body = req.body;
-		var input = { text: $body.message };
-		var payload = {
-			workspace_id: req.workspaceId,
-			context: $body.context || {},
-			input: input || {}
-		}
-		
-		conversation.message(payload, (err, data) => {
-			if (err) {
-				console.error(err);
-				return res.status(err.code || 500).json(err);
-			}			
-			res.json(data);
-		});
-	});
+    app.post('/api/message', CheckWorkspaceMiddleware, (req, res) => {
+        var $body = req.body;
+        var input = {
+            text: $body.message
+        };
+        var payload = {
+            workspace_id: req.workspaceId,
+            context: $body.context || {},
+            input: input || {}
+        }
+
+        conversation.message(payload, (err, data) => {
+            if (err) {
+                console.error(err);
+                return res.status(err.code || 500).json(err);
+            }
+            res.json(data);
+        });
+    });
 
 }
