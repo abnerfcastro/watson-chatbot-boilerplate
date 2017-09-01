@@ -1,6 +1,6 @@
 /*!
  * ./public/js/controllers/chat.controller.js
- * 
+ *
  * Declares ChatController
  * Authors: Abner Castro
  * Date: August 16th, 2017
@@ -19,12 +19,13 @@
 
         vm.input = "";
         vm.messages = [];
-        
+
         vm.sendMessage = function () {
             if (vm.input !== "") {
                 var message = {};
                 message["recipient"] = "user";
                 message["content"] = vm.input;
+                message["date"] = (new Date()).toTimeString().substr(0, 8);
                 vm.messages.push(message);
                 vm.input = "";
                 $log.log(vm.messages);
@@ -35,6 +36,7 @@
                             var reply = {};
                             reply["recipient"] = "watson";
                             reply["content"] = data.output.text[0];
+                            reply["date"] = (new Date()).toTimeString().substr(0, 8);
                             vm.messages.push(reply);
                         }
                     });

@@ -9,9 +9,8 @@ body {
     margin-bottom: 45px;
 }
 
-#page-wrapper {
-    margin-top: 15px;
-    margin-bottom: 15px;
+#about-wrapper {
+    margin-top: 30px;
 }
 
 .effect {
@@ -48,10 +47,26 @@ body {
     margin: 0;
 }
 
+.chat-card {
+    padding: 0;
+}
+
 .chat-card .card-body {
-    min-height: 300px;
-    max-height: 600px;
+    min-height: 320px;
+    max-height: 320px;
     overflow-y: scroll;
+}
+
+.card-footer {
+    padding: 0.75rem;
+}
+
+.chat-container {
+    min-height: calc(100vh - 102px);
+}
+
+.card-footer form .form-group {
+    margin-bottom: 0;
 }
 
 .footer {

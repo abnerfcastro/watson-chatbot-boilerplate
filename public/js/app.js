@@ -1,6 +1,6 @@
 /*!
  * ./public/js/app.js
- * 
+ *
  * Main Angular module
  * Authors: Abner Castro
  * Date: August 16th, 2017
@@ -11,7 +11,8 @@
 
     angular.module('chatbot.app', [
         'ngRoute',
-        'chatbot.app.services'
+        'chatbot.app.services',
+        'luegg.directives'
     ]);
 
     angular
@@ -19,7 +20,7 @@
         .config(['$compileProvider', '$routeProvider', '$locationProvider',
             function ($compileProvider, $routeProvider, $locationProvider) {
                 // Uncomment for Production
-                // $compileProvider.debugInfoEnabled(false);
+                $compileProvider.debugInfoEnabled(false);
 
                 $routeProvider
                     .when('/', {
